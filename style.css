@@ -1,0 +1,232 @@
+:root {
+    --starbucks-green: #00704A;
+    --starbucks-dark: #004d33;
+    --golden-yellow: #FFD700;
+    --white: #ffffff;
+    --off-white: #f8f9fa;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --text-dark: #2c3e50;
+    --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+    --radius-l: 24px;
+    --radius-m: 16px;
+    --radius-s: 12px;
+}
+
+body {
+    background: linear-gradient(135deg, var(--starbucks-green) 0%, var(--starbucks-dark) 100%);
+    color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    /* Mobile-focused width */
+    min-height: 100vh;
+    background: var(--off-white);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 481px) {
+    .container {
+        min-height: 90vh;
+        border-radius: var(--radius-l);
+        margin: 20px;
+        overflow: hidden;
+    }
+}
+
+header {
+    background: var(--starbucks-green);
+    padding: 30px 20px 20px;
+    /* Reduced top padding for neatness */
+    text-align: center;
+    border-bottom-left-radius: var(--radius-m);
+    /* Slightly tighter radius */
+    border-bottom-right-radius: var(--radius-m);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Softer shadow */
+    color: var(--white);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle texture/shine for premium feel */
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.brand-title {
+    font-weight: 700;
+    /* Slightly lighter than 800 for elegance */
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 4px;
+    /* More spacing for 'clean' look */
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.sub-title {
+    font-family: 'Lobster', cursive;
+    font-size: 2.8rem;
+    /* Slightly varied size */
+    color: var(--golden-yellow);
+    margin: 5px 0 0;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    /* Softer shadow */
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+h3 {
+    font-size: 1rem;
+    color: var(--starbucks-green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--golden-yellow);
+    padding-left: 10px;
+}
+
+/* Zen Card Style for Items */
+.package-item {
+    background: var(--white);
+    border-radius: var(--radius-m);
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.package-item:active {
+    transform: scale(0.98);
+}
+
+.package-item label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.4;
+    flex: 1;
+    margin-right: 15px;
+}
+
+/* Stepper Control */
+.stepper {
+    display: flex;
+    align-items: center;
+    background: var(--off-white);
+    border-radius: var(--radius-s);
+    padding: 4px;
+}
+
+.stepper-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: var(--white);
+    border-radius: 8px;
+    color: var(--starbucks-green);
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    user-select: none;
+}
+
+.stepper-btn:active {
+    background: #eee;
+}
+
+.stepper-input {
+    width: 50px;
+    /* Slightly wider for manual input */
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    /* Allow interaction */
+    pointer-events: auto;
+}
+
+.stepper-input:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 4px;
+}
+
+/* Results Section */
+.results-section {
+    background: var(--starbucks-green);
+    color: var(--white);
+    border-radius: var(--radius-l);
+    padding: 25px;
+    margin-top: 10px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.results-section h3 {
+    color: var(--golden-yellow);
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1rem;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-value {
+    font-weight: 700;
+    color: var(--golden-yellow);
+    font-size: 1.2rem;
+}
+
+.placeholder-text {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    font-size: 0.9rem;
+}
