@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nasi-arab-v5';
+const CACHE_NAME = 'nasi-arab-v7';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',

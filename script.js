@@ -25,7 +25,7 @@ const packages = [
     },
     {
         name: "SINGLE AYAM",
-        ingredients: { "AYAM PISTOL : KETUL": 1, "BERAS : KG": 0.11 }
+        ingredients: { "AYAM : KETUL": 1, "BERAS : KG": 0.11 }
     },
     {
         name: "SINGLE AYAM MANDY PISTOL",
